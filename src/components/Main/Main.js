@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AppBar from 'material-ui/AppBar'
+import Nav from '../Nav/Nav'
 import {
   Route,
   Switch
@@ -7,22 +7,20 @@ import {
 
 import Dashboard from '../../containers/Dashboard/Dashboard'
 import Buttons from '../Buttons/Buttons'
+import Charts from '../Charts/Charts'
 
 class Main extends Component {
   render() {
     return (
       <div className="main-container">
-        <AppBar
-          title=""
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
-          onLeftIconButtonTouchTap={() => this.setState({open: true})}
-        />
-        <div className="main">
+        <Nav />
+        <div className="main container-fluid">
           <Switch>
             <Route exact path='/' component={Dashboard} />
             <Route path='/buttons' component={Buttons} />
+            <Route path='/charts' component={Charts} />
             <Route render={function(){
-              return <p>Route not found Not Found</p>
+              return <p>Route not found</p>
             }}/>
           </Switch>
         </div>

@@ -1,2 +1,12 @@
 @import 'variables';
 @import 'sidebar';
+@import 'main';
+
+.app {
+  display: flex;
+}
+
+ul{
+  padding: 0px;
+  list-style-type: none;
+}

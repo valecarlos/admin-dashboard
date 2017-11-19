@@ -1,3 +1,28 @@
 .sidebar {
-  width:  $sidebar-width;
+  transition: all 0.2s ease-in;
+  width:  0px;
+  flex: 0;
+  box-shadow: 0px 0px 8px rgba(151, 151, 151, 0.397);
+  overflow: hidden;
+
+  @media screen and (min-width: 576px){
+    width: $sidebar-width-small;
+    flex: 0 0 $sidebar-width-small;
+  }
+}
+
+.sidebar.visible{
+  width: $sidebar-width;
+  flex: 0 0 $sidebar-width;
+}
+
+.sidebar__header{
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo{
+  width: 38px;
 }

@@ -1,2 +1,33 @@
 .sidebar {
-  width: 230px; }
+  transition: all 0.2s ease-in;
+  width: 0px;
+  flex: 0;
+  box-shadow: 0px 0px 8px rgba(151, 151, 151, 0.397);
+  overflow: hidden; }
+  @media screen and (min-width: 576px) {
+    .sidebar {
+      width: 50px;
+      flex: 0 0 50px; } }
+
+.sidebar.visible {
+  width: 230px;
+  flex: 0 0 230px; }
+
+.sidebar__header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.logo {
+  width: 38px; }
+
+.main-container {
+  flex-grow: 1; }
+
+.app {
+  display: flex; }
+
+ul {
+  padding: 0px;
+  list-style-type: none; }

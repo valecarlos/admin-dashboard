@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import './styles/App.css';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -21,12 +23,12 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <div className="app">
-            <MuiThemeProvider>
-              <Sidebar />
-              <Main />
-            </MuiThemeProvider>
-          </div>
+          <MuiThemeProvider>
+            <div className="app h-100">
+                <Sidebar />
+                <Main />
+            </div>
+          </MuiThemeProvider>
         </Router>
       </Provider>
     );
