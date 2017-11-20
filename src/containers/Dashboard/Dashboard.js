@@ -27,12 +27,17 @@ class Dashboard extends Component {
       }
     return (
       <div className="row">
-        <div className="col-xs-12 col-md-6">
-          <Line 
-            data={data}
-          />
+        <div className="col-12 col-md-6">
+          <div>
+            <Line 
+              data={data}
+              options={{
+                responsive: true
+              }}
+            />
+          </div>
         </div>
-        <div className="col-xs-12 col-md-6">
+        <div className="col-12 col-md-6">
           <Table />
         </div>
       </div>

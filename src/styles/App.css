@@ -26,17 +26,21 @@
   display: inline-block; }
 
 .main-container {
-  flex-grow: 1; }
+  flex-grow: 1;
+  min-width: 320px; }
 
 .main {
   padding-top: 15px;
   height: calc(100% - 64px);
   overflow: auto;
   overflow-x: hidden;
-  overflow-y: auto; }
+  overflow-y: auto;
+  max-width: 100%; }
 
 .app {
-  display: flex; }
+  display: flex;
+  max-width: 100%;
+  overflow: hidden; }
 
 ul {
   padding: 0px;

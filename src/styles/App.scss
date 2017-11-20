@@ -4,6 +4,8 @@
 
 .app {
   display: flex;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 ul{

@@ -1,5 +1,6 @@
 .main-container{
   flex-grow: 1;
+  min-width: 320px; //necessary for shrinking back the container on window resize
 }
 
 .main{
@@ -8,4 +9,5 @@
   overflow: auto;
   overflow-x: hidden;
   overflow-y: auto;
+  max-width: 100%;
 }
