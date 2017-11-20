@@ -17,7 +17,7 @@
 }
 
 .sidebar__header{
-  height: 64px;
+  height: $header-height;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,4 +25,8 @@
 
 .logo{
   width: 38px;
+}
+
+.sidebar__content-right li{
+  display: inline-block;
 }

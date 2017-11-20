@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom'
 import AppBar from 'material-ui/AppBar'
 import upperFirst from 'lodash/upperFirst'
 
+import NavContentRight from './NavContentRight'
 function mapStateToProps(state) {
   return {
     isNavCollapsed: state.settings.isNavCollapsed
@@ -18,8 +19,11 @@ class Nav extends Component {
     return (
       <div>
         <AppBar
+          style={{height: '60px'}}
           title={title}
-          iconClassNameRight="muidocs-icon-navigation-expand-more"
+          iconElementRight={
+            <NavContentRight />
+          }
           onLeftIconButtonTouchTap={this.props.onBurgerClick}
         />
       </div>

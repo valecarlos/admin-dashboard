@@ -22,8 +22,18 @@
 .logo {
   width: 38px; }
 
+.sidebar__content-right li {
+  display: inline-block; }
+
 .main-container {
   flex-grow: 1; }
+
+.main {
+  padding-top: 15px;
+  height: calc(100% - 64px);
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto; }
 
 .app {
   display: flex; }
