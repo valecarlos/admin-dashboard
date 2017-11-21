@@ -5,7 +5,7 @@ class Buttons extends Component {
   render() {
     return (
       <div>
-        ffs buttons
+        Buttons!
       </div>
     );
   }
