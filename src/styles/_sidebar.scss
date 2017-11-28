@@ -9,24 +9,32 @@
     width: $sidebar-width-small;
     flex: 0 0 $sidebar-width-small;
   }
-}
 
-.sidebar.visible{
-  width: $sidebar-width;
-  flex: 0 0 $sidebar-width;
-}
+  &.visible{
+    width: $sidebar-width;
+    flex: 0 0 $sidebar-width;
+  }
 
-.sidebar__header{
-  height: $header-height;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo{
-  width: 38px;
-}
-
-.sidebar__content-right li{
-  display: inline-block;
+  &__header{
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  &__content-right li{
+    display: inline-block;
+  }
+  
+  .logo{
+    width: 38px;
+  }
+  &__navLink{
+    display: block;
+    transition: all 0.2s ease-in;
+    
+    &--active{
+      border-left: 4px solid rgb(143, 96, 255);
+    }
+  }
 }

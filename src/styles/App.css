@@ -8,22 +8,23 @@
     .sidebar {
       width: 50px;
       flex: 0 0 50px; } }
-
-.sidebar.visible {
-  width: 230px;
-  flex: 0 0 230px; }
-
-.sidebar__header {
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.logo {
-  width: 38px; }
-
-.sidebar__content-right li {
-  display: inline-block; }
+  .sidebar.visible {
+    width: 230px;
+    flex: 0 0 230px; }
+  .sidebar__header {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .sidebar__content-right li {
+    display: inline-block; }
+  .sidebar .logo {
+    width: 38px; }
+  .sidebar__navLink {
+    display: block;
+    transition: all 0.2s ease-in; }
+    .sidebar__navLink--active {
+      border-left: 4px solid #8f60ff; }
 
 .main-container {
   flex-grow: 1;

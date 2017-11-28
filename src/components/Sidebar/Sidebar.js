@@ -7,15 +7,6 @@ import logo from '../../assets/img/CVLogo.svg'
 
 class Sidebar extends Component {
   render() {
-    const navLinkStyle = {
-      // borderLeft: '4px solid transparent',
-      display: 'block',
-      transition: 'all 0.2s ease-in'
-    }
-    const navLinkActiveStyle = {
-      borderLeft: '4px solid rgb(143, 96, 255)'
-    }
-
     const { isNavCollapsed } = this.props
     let labelCollapsed = {
       transition: 'padding 0.2s ease-in', 
@@ -24,7 +15,6 @@ class Sidebar extends Component {
     if (isNavCollapsed){
       labelCollapsed.paddingLeft = '16px'
     }
-    console.log(labelCollapsed, "yes")
     const classes = 'sidebar' + (isNavCollapsed ? '' : ' visible')
     return (
       <div className={classes}>
@@ -34,27 +24,27 @@ class Sidebar extends Component {
         <div className="sibebar__content">
           <ul>
             <li>
-              <NavLink exact to="/" style={navLinkStyle} activeStyle={navLinkActiveStyle}>
+              <NavLink exact to="/" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
                 <FlatButton labelStyle={labelCollapsed} style={{lineHeight: '40px', height: '40px', textAlign: 'left'}} label="Dashboard" primary={true} fullWidth={true} icon={<FontIcon className="material-icons">dashboard</FontIcon>} /> 
               </NavLink >
             </li>
             <li>
-              <NavLink  to="/buttons" style={navLinkStyle} activeStyle={navLinkActiveStyle}>
+              <NavLink  to="/buttons" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
                 <FlatButton labelStyle={labelCollapsed} style={{lineHeight: '40px', height: '40px', textAlign: 'left'}} label="UI Components" primary={true} fullWidth={true} icon={<FontIcon className="material-icons">blur_linear</FontIcon>} />
               </NavLink >
             </li>
             <li>
-              <NavLink  to="/charts" style={navLinkStyle} activeStyle={navLinkActiveStyle}>
+              <NavLink  to="/charts" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
                 <FlatButton labelStyle={labelCollapsed} style={{lineHeight: '40px', height: '40px', textAlign: 'left'}} label="Charts" primary={true} fullWidth={true} icon={<FontIcon className="material-icons">pie_chart</FontIcon>} />
               </NavLink >
             </li>
             <li>
-              <NavLink  to="/maps" style={navLinkStyle} activeStyle={navLinkActiveStyle}>
+              <NavLink  to="/maps" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
                 <FlatButton labelStyle={labelCollapsed} style={{lineHeight: '40px', height: '40px', textAlign: 'left'}} label="Maps" primary={true} fullWidth={true} icon={<FontIcon className="material-icons">map</FontIcon>} />
               </NavLink >
             </li>
             <li>
-              <NavLink  to="/widgets" style={navLinkStyle} activeStyle={navLinkActiveStyle}>
+              <NavLink  to="/widgets" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
                 <FlatButton labelStyle={labelCollapsed} style={{lineHeight: '40px', height: '40px', textAlign: 'left'}} label="Widgets" primary={true} fullWidth={true} icon={<FontIcon className="material-icons">widgets</FontIcon>} />
               </NavLink >
             </li>
