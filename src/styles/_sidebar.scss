@@ -5,7 +5,7 @@
   box-shadow: 0px 0px 8px rgba(151, 151, 151, 0.397);
   overflow: hidden;
 
-  @media screen and (min-width: 576px){
+  @media screen and (min-width: $media-sm){
     width: $sidebar-width-small;
     flex: 0 0 $sidebar-width-small;
   }
@@ -32,9 +32,17 @@
   &__navLink{
     display: block;
     transition: all 0.2s ease-in;
+    height: 40px;
+    overflow: hidden;
     
     &--active{
-      border-left: 4px solid rgb(143, 96, 255);
+      border-left: 4px solid $active-navLink-color;
     }
+  }
+
+  &__flat-button{
+    line-height: 40px;
+    height: 40px;
+    text-align: left;
   }
 }
