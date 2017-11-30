@@ -17,7 +17,7 @@ class Main extends Component {
         <div className="main container-fluid">
           <Switch>
             <Route exact path='/' component={Dashboard} />
-            <Route path='/buttons' component={Buttons} />
+            <Route path='/ui/buttons' component={Buttons} />
             <Route path='/charts' component={Charts} />
             <Route render={function(){
               return <p>Route not found</p>

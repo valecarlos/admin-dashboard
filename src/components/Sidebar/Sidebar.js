@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton'
 import { NavLink , withRouter } from 'react-router-dom'
 import FontIcon from 'material-ui/FontIcon'
 import logo from '../../assets/img/CVLogo.svg'
+import Collapsible from '../../components/UI/Collapsible/Collapsible'
 
 const SidebarFlatButton = (props) => {
   const { isNavCollapsed } = props
@@ -72,14 +73,6 @@ class Sidebar extends Component {
               </NavLink >
             </li>
             <li>
-              <NavLink  to="/buttons" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
-                <SidebarFlatButton
-                  isNavCollapsed={isNavCollapsed}
-                  label="UI Components"  
-                  icon="blur_linear" />
-              </NavLink >
-            </li>
-            <li>
               <NavLink  to="/charts" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
                 <SidebarFlatButton
                   isNavCollapsed={isNavCollapsed}
@@ -102,6 +95,34 @@ class Sidebar extends Component {
                   label="Widgets"  
                   icon="widgets" />
               </NavLink >
+            </li>
+            <li>
+              <Collapsible
+                headerContent={<SidebarFlatButton
+                  isNavCollapsed={isNavCollapsed}
+                  label="UI Components"  
+                  icon="blur_linear" />}
+                transitionTime={100}
+                >
+                <ul>
+                  <li>
+                    <NavLink  to="/ui/buttons" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
+                      <SidebarFlatButton
+                        isNavCollapsed={isNavCollapsed}
+                        label="Buttons"  
+                        icon="blur_linear" />
+                    </NavLink >
+                  </li>
+                  <li>
+                    <NavLink  to="/ui/collapsible" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
+                      <SidebarFlatButton
+                        isNavCollapsed={isNavCollapsed}
+                        label="collapsible"  
+                        icon="blur_linear" />
+                    </NavLink >
+                  </li>
+                </ul>
+              </Collapsible>
             </li>
           </ul>
         </div>
