@@ -5,6 +5,35 @@ import { NavLink , withRouter } from 'react-router-dom'
 import FontIcon from 'material-ui/FontIcon'
 import logo from '../../assets/img/CVLogo.svg'
 
+const SidebarFlatButton = (props) => {
+  const { isNavCollapsed } = props
+  //inline styles to override MUI defaults
+  let inlineStyles = {
+    label : {
+      lineHeight: '40px',
+      height: '40px',
+      textAlign: 'left'
+    },
+    labelCollapsed : {
+      transition: 'padding 0.2s ease-in', 
+      textTransform: 'none'
+    }
+  }
+
+  if (isNavCollapsed){
+    inlineStyles.labelCollapsed.paddingLeft = '16px'
+  }
+
+  return (
+    <FlatButton 
+      labelStyle={inlineStyles.labelCollapsed} 
+      style={inlineStyles.label} 
+      primary={true} 
+      fullWidth={true} 
+      label={props.label}
+      icon={<FontIcon className="material-icons">{props.icon}</FontIcon>} /> 
+  )
+}
 class Sidebar extends Component {
   render() {
     const { isNavCollapsed } = this.props
@@ -24,7 +53,9 @@ class Sidebar extends Component {
     if (isNavCollapsed){
       inlineStyles.labelCollapsed.paddingLeft = '16px'
     }
+
     const classes = 'sidebar' + (isNavCollapsed ? '' : ' visible')
+
     return (
       <div className={classes}>
         <div className="sidebar__header">
@@ -34,57 +65,42 @@ class Sidebar extends Component {
           <ul>
             <li>
               <NavLink exact to="/" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
-                <FlatButton 
-                  labelStyle={inlineStyles.labelCollapsed} 
-                  style={inlineStyles.label} 
+                <SidebarFlatButton
+                  isNavCollapsed={isNavCollapsed}
                   label="Dashboard" 
-                  primary={true} 
-                  fullWidth={true} 
-                  icon={<FontIcon className="material-icons">dashboard</FontIcon>} /> 
+                  icon="dashboard" /> 
               </NavLink >
             </li>
             <li>
               <NavLink  to="/buttons" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
-                <FlatButton 
-                  labelStyle={inlineStyles.labelCollapsed} 
-                  style={inlineStyles.label} 
-                  label="UI Components" 
-                  primary={true} 
-                  fullWidth={true} 
-                  icon={<FontIcon className="material-icons">blur_linear</FontIcon>} />
+                <SidebarFlatButton
+                  isNavCollapsed={isNavCollapsed}
+                  label="UI Components"  
+                  icon="blur_linear" />
               </NavLink >
             </li>
             <li>
               <NavLink  to="/charts" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
-                <FlatButton 
-                  labelStyle={inlineStyles.labelCollapsed} 
-                  style={inlineStyles.label} 
-                  label="Charts" 
-                  primary={true} 
-                  fullWidth={true} 
-                  icon={<FontIcon className="material-icons">pie_chart</FontIcon>} />
+                <SidebarFlatButton
+                  isNavCollapsed={isNavCollapsed}
+                  label="Charts"  
+                  icon="pie_chart" />
               </NavLink >
             </li>
             <li>
               <NavLink  to="/maps" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
-                <FlatButton 
-                  labelStyle={inlineStyles.labelCollapsed} 
-                  style={inlineStyles.label} 
-                  label="Maps" 
-                  primary={true} 
-                  fullWidth={true} 
-                  icon={<FontIcon className="material-icons">map</FontIcon>} />
+                <SidebarFlatButton
+                  isNavCollapsed={isNavCollapsed}
+                  label="Maps"  
+                  icon="map" />
               </NavLink >
             </li>
             <li>
               <NavLink  to="/widgets" className="sidebar__navLink" activeClassName="sidebar__navLink--active">
-                <FlatButton 
-                  labelStyle={inlineStyles.labelCollapsed} 
-                  style={inlineStyles.label} 
-                  label="Widgets" 
-                  primary={true} 
-                  fullWidth={true} 
-                  icon={<FontIcon className="material-icons">widgets</FontIcon>} />
+                <SidebarFlatButton
+                  isNavCollapsed={isNavCollapsed}
+                  label="Widgets"  
+                  icon="widgets" />
               </NavLink >
             </li>
           </ul>
