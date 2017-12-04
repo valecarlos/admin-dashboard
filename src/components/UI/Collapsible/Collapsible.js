@@ -43,16 +43,23 @@ class Collapsible extends Component {
       overflow: 'hidden',
       transition: this.state.transition
     }
+
+    //clasnames
+    const rootClassNames = `${this.props.rootClassName} ${this.state.isOpen ? this.props.rootOpenClassName : ''}`
+    const headerClassNames = `${this.props.headerClassName} ${this.state.isOpen ? this.props.headerOpenClassName : ''}`
+    const wrapperContentClassNames = `${this.props.wrapperContentClassName} ${this.state.isOpen ? this.props.wrapperContentOpenClassName : ''}`
+    const contentClassNames = `${this.props.contentClassName} ${this.state.isOpen ? this.props.contentOpenClassName : ''}`
+
     return (
-      <div className={this.props.rootClassName}>
+      <div className={rootClassNames}>
         <div 
-          className={this.props.headerClassName}
+          className={headerClassNames}
           onClick={this.handleHeaderClick}>
           {this.props.headerContent}
         </div>
-        <div className={this.props.wrapperContentClassName} style={contentWrapperStyle}>
+        <div className={wrapperContentClassNames} style={contentWrapperStyle}>
           <div 
-            className={this.props.contentClassName}
+            className={contentClassNames}
             ref="content">
             {this.props.children}
           </div>
@@ -70,7 +77,9 @@ Collapsible.defaultProps = {
   rootClassName: '',
   rootOpenClassName: '',
   contentClassName: '',
-  wrapperContentClassName: ''
+  contentOpenClassName: '',
+  wrapperContentClassName: '',
+  wrapperContentOpenClassName: ''
 }
 
 export default Collapsible;

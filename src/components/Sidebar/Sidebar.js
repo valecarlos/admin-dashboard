@@ -5,6 +5,7 @@ import { NavLink , withRouter } from 'react-router-dom'
 import FontIcon from 'material-ui/FontIcon'
 import logo from '../../assets/img/CVLogo.svg'
 import Collapsible from '../../components/UI/Collapsible/Collapsible'
+import Avatar from 'material-ui/Avatar';
 
 const SidebarFlatButton = (props) => {
   const { isNavCollapsed } = props
@@ -24,16 +25,43 @@ const SidebarFlatButton = (props) => {
   if (isNavCollapsed){
     inlineStyles.labelCollapsed.paddingLeft = '16px'
   }
+  
+  let flatButtonResult
 
-  return (
-    <FlatButton 
-      labelStyle={inlineStyles.labelCollapsed} 
-      style={inlineStyles.label} 
-      primary={true} 
-      fullWidth={true} 
-      label={props.label}
-      icon={<FontIcon className="material-icons">{props.icon}</FontIcon>} /> 
-  )
+  if (props.icon){
+    flatButtonResult = (
+      <FlatButton 
+        labelStyle={inlineStyles.labelCollapsed} 
+        style={inlineStyles.label} 
+        primary={true} 
+        fullWidth={true} 
+        label={props.label}
+        icon={<FontIcon className="material-icons">{props.icon}</FontIcon>}
+        className={props.className} /> 
+    )
+  } else {
+    const labelInitial = props.label[0].toUpperCase()
+    flatButtonResult = (
+      <FlatButton 
+        labelStyle={inlineStyles.labelCollapsed} 
+        style={inlineStyles.label} 
+        primary={true} 
+        fullWidth={true}
+        className={props.className}>
+
+          <Avatar
+            size={24}
+            className="sidebar__avatar"
+          >
+            {labelInitial}
+          </Avatar>
+          <span>
+            {props.label}
+          </span>
+      </FlatButton> 
+    )
+  }
+  return flatButtonResult 
 }
 class Sidebar extends Component {
   render() {
@@ -98,10 +126,14 @@ class Sidebar extends Component {
             </li>
             <li>
               <Collapsible
+                rootOpenClassName="sidebar__collapsible--open"
                 headerContent={<SidebarFlatButton
                   isNavCollapsed={isNavCollapsed}
                   label="UI Components"  
-                  icon="blur_linear" />}
+                  icon="blur_linear"
+                  />}
+                headerClassName="sidebar__flat-button--has-sub"
+                headerOpenClassName="open"
                 transitionTime={100}
                 >
                 <ul>
@@ -110,7 +142,7 @@ class Sidebar extends Component {
                       <SidebarFlatButton
                         isNavCollapsed={isNavCollapsed}
                         label="Buttons"  
-                        icon="blur_linear" />
+                        />
                     </NavLink >
                   </li>
                   <li>
@@ -118,7 +150,7 @@ class Sidebar extends Component {
                       <SidebarFlatButton
                         isNavCollapsed={isNavCollapsed}
                         label="collapsible"  
-                        icon="blur_linear" />
+                        />
                     </NavLink >
                   </li>
                 </ul>
