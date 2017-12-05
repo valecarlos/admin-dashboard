@@ -28,51 +28,59 @@ class Dashboard extends Component {
       }
     return (
       <div>
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <div>
-              <Line 
-                data={data}
-                options={{
-                  responsive: true
-                }}
+        <section className="dashboard__section-margin">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <div>
+                <Line 
+                  data={data}
+                  options={{
+                    responsive: true
+                  }}
+                />
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <Table />
+            </div>
+          </div>
+        </section>
+        <section className="dashboard__section-margin">
+          <div className="row">
+            <div className="col-6 col-lg-3 dashboard__item-margin">
+              <QuickSummary
+                rootClassName="bg-primary text-white h-100"
+                headerInfo='428'
+                bottomInfo='New Unique Users'
+                iconName='group_add'
+              />
+            </div>
+            <div className="col-6 col-lg-3 dashboard__item-margin">
+              <QuickSummary
+                rootClassName="bg-secondary text-white h-100"
+                headerInfo='1958'
+                bottomInfo='Active Users'
+                iconName='person'
+              />
+            </div>
+            <div className="col-6 col-lg-3 dashboard__item-margin">
+              <QuickSummary
+                rootClassName="bg-warning text-white h-100"
+                headerInfo='195'
+                bottomInfo='Orders registered'
+                iconName='poll'
+              />
+            </div>
+            <div className="col-6 col-lg-3 dashboard__item-margin">
+              <QuickSummary
+                rootClassName="bg-info text-white h-100"
+                headerInfo='28'
+                bottomInfo='New Notifications'
+                iconName='notifications_active'
               />
             </div>
           </div>
-          <div className="col-12 col-md-6">
-            <Table />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-6 col-md-3">
-            <QuickSummary
-              headerInfo='428'
-              bottomInfo='New Unique Users'
-              iconName='group_add'
-            />
-          </div>
-          <div className="col-6 col-md-3">
-            <QuickSummary
-              headerInfo='1958'
-              bottomInfo='Active Users'
-              iconName='person'
-            />
-          </div>
-          <div className="col-6 col-md-3">
-            <QuickSummary
-              headerInfo='195'
-              bottomInfo='Orders registered'
-              iconName='poll'
-            />
-          </div>
-          <div className="col-6 col-md-3">
-            <QuickSummary
-              headerInfo='28'
-              bottomInfo='New Notifications'
-              iconName='notifications_active'
-            />
-          </div>
-        </div>
+        </section>
       </div>
     );
   }

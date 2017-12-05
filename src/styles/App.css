@@ -83,6 +83,12 @@
   overflow-y: auto;
   max-width: 100%; }
 
+.dashboard__section-margin {
+  margin-bottom: 25px; }
+
+.dashboard__item-margin {
+  margin-bottom: 15px; }
+
 .app {
   display: flex;
   max-width: 100%;

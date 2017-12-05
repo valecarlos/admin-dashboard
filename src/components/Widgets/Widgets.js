@@ -5,7 +5,6 @@ class QuickSummary extends Component {
     const style = {
       root: {
         display: 'flex',
-        backgroundColor: 'purple',
         color: 'white',
         width: '100%'
       },
@@ -27,7 +26,7 @@ class QuickSummary extends Component {
 
     const rootClassNames = this.props.rootClassName
     return (
-      <div style={style.root}>
+      <div className={rootClassNames} style={style.root}>
         <div style={style.iconContainer}>
           <i className="material-icons" style={style.icon}>{this.props.iconName}</i>
         </div>
@@ -41,7 +40,7 @@ class QuickSummary extends Component {
 }
 
 QuickSummary.defaultProps = {
-  rootClassName : '',
+  rootClassName : 'bg-secondary text-white', // send a combination of background and font colors using bootstrap's
   iconName: 'home',
   headerInfo: '',
   bottomInfo: ''
