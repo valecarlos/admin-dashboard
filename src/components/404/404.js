@@ -11,7 +11,7 @@ class Page404 extends Component {
     return (
       <div className="row h-100 align-items-center justify-content-center">
         <p style={style.message}>
-          404
+          404 Page not found
         </p>
       </div>
     );

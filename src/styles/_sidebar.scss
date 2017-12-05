@@ -4,10 +4,16 @@
   flex: 0;
   box-shadow: 0px 0px 8px rgba(151, 151, 151, 0.397);
   overflow: hidden;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  z-index: 1;
 
-  @media screen and (min-width: $media-sm){
+  @media screen and (min-width: $media-lg){
     width: $sidebar-width-small;
     flex: 0 0 $sidebar-width-small;
+    position: static;
   }
 
   &.visible{
