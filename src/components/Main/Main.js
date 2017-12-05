@@ -8,6 +8,7 @@ import {
 import Dashboard from '../../containers/Dashboard/Dashboard'
 import Buttons from '../Buttons/Buttons'
 import Charts from '../Charts/Charts'
+import Page404 from '../404/404'
 
 class Main extends Component {
   render() {
@@ -20,7 +21,7 @@ class Main extends Component {
             <Route path='/ui/buttons' component={Buttons} />
             <Route path='/charts' component={Charts} />
             <Route render={function(){
-              return <p>Route not found</p>
+              return <Page404 />
             }}/>
           </Switch>
         </div>

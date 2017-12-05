@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Line} from 'react-chartjs-2';
 import Table from '../../components/UI/Table/Table'
+import {QuickSummary} from '../../components/Widgets/Widgets'
 
 class Dashboard extends Component {
   render() {
@@ -26,19 +27,51 @@ class Dashboard extends Component {
         }]
       }
     return (
-      <div className="row">
-        <div className="col-12 col-md-6">
-          <div>
-            <Line 
-              data={data}
-              options={{
-                responsive: true
-              }}
-            />
+      <div>
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <div>
+              <Line 
+                data={data}
+                options={{
+                  responsive: true
+                }}
+              />
+            </div>
+          </div>
+          <div className="col-12 col-md-6">
+            <Table />
           </div>
         </div>
-        <div className="col-12 col-md-6">
-          <Table />
+        <div className="row">
+          <div className="col-6 col-md-3">
+            <QuickSummary
+              headerInfo='428'
+              bottomInfo='New Unique Users'
+              iconName='group_add'
+            />
+          </div>
+          <div className="col-6 col-md-3">
+            <QuickSummary
+              headerInfo='1958'
+              bottomInfo='Active Users'
+              iconName='person'
+            />
+          </div>
+          <div className="col-6 col-md-3">
+            <QuickSummary
+              headerInfo='195'
+              bottomInfo='Orders registered'
+              iconName='poll'
+            />
+          </div>
+          <div className="col-6 col-md-3">
+            <QuickSummary
+              headerInfo='28'
+              bottomInfo='New Notifications'
+              iconName='notifications_active'
+            />
+          </div>
         </div>
       </div>
     );
